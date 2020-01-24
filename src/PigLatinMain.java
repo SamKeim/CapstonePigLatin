@@ -24,7 +24,7 @@ public class PigLatinMain {
 		String[] phraseArray = phrase.split(" ");
 		String[] finalArray = new String[phraseArray.length];
 		String finalSentence = "";
-		String regNumSym = "[0-9@#$%^&*<>.,]";
+		String regNumSym = "[0-9@#$%^&*<>.,:;]";
 		String regVowels = "[aeiouAEIOU]";
 		
 		// Checks if string is blank
