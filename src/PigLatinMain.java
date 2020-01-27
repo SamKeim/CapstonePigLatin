@@ -15,9 +15,9 @@ public class PigLatinMain {
 		// Checks for punctuation at end of string, stores to variable, modifies string and appends punctuation to end
 		String regPunct = "[.?!]";
 		String punctuation = "";
-		if (regexInt(phrase, regPunct) > 0) {
-			punctuation = phrase.substring(regexInt(phrase,regPunct));
-			phrase = phrase.substring(0,phrase.length() - regexInt(phrase,regPunct));
+		if (regexInt(phrase, regPunct) == phrase.length() - 1) {
+			punctuation = phrase.substring(regexInt(phrase, regPunct));
+			phrase = phrase.substring(0,regexInt(phrase, regPunct));
 		}
 		
 		//set up arrays, variables, regex
@@ -79,8 +79,8 @@ public class PigLatinMain {
 			return regexMatcher.start();
 		}
 		
-		// Returns 0 if unavailable
-		return 0;
+		// Returns -1 if unavailable
+		return -1;
 	}
 	
 	public static void main(String[] args) {
@@ -106,5 +106,6 @@ public class PigLatinMain {
 			userChoice = scnr.nextLine();
 			
 		} while (true); // I know there has to be a better way to do this, but I do not know it yet
+//		System.out.println("hello in piglatin is " + mthd.toPigLatin("Hello"));
 	}
 }
